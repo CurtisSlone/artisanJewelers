@@ -1,0 +1,12 @@
+<% if can? :update, @jewelrycategory %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Jewelrycategory:</strong>
+  <%= @jewelrycategory.jewelrycategory %>
+</p>
+
+<%= link_to 'Edit', edit_jewelrycategory_path(@jewelrycategory) %> |
+<%= link_to 'Back', jewelrycategories_path %>
+
+<% end %>

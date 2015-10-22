@@ -1,0 +1,33 @@
+
+
+
+<div class="row">
+    <% @items.each do |item| %>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div style="height:350px;">
+             <center> <%= image_tag item.image.url(:medium) %>
+          </div>
+        <p><a href="#" data-toggle="modal" data-target="#myModal_<%= item.id %>">
+          <span class="glyphicon glyphicon-plus"></span> more info
+        </a></p>
+            <p><strong><%= number_to_currency item.price %></strong></p>
+            <p><%= item.name %></p>
+          <div>
+              <p><%= item.description[0..250] %>...[READ MORE]</p>
+          </div>
+          </center>
+        </div>
+           <div class="modal-footer">
+            <%= form_tag('/add_to_cart') do %>
+              <%= hidden_field_tag :item_id, item.id %>
+              <br />
+              <%= submit_tag "Buy It!", class: "btn btn-success" %>
+            <% end %>
+          </div>
+      </div>
+    </div>
+</div>
+  <% end %>
+</div>

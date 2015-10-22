@@ -1,0 +1,10 @@
+<% if can? :update, @jewelrycollection %>
+
+<h1>Editing Jewelrycollection</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @jewelrycollection %> |
+<%= link_to 'Back', jewelrycollections_path %>
+
+<% end %>

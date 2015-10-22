@@ -1,0 +1,57 @@
+<% if can? :update, @item %>
+
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+      <%= f.select(:jewelrygroup_id, @jewelrygroups.collect {|c| [c.jewelrygroup, c.id]}, {:include_blank => 'Select a jewelry group'}) %>
+  </div>
+  <div class="form-group">
+      <%= f.select(:jewelrycategory_id, @jewelrycategories.collect {|c| [c.jewelrycategory, c.id]}, {:include_blank => 'Select a jewelry category'}) %>
+  </div>
+  <div class="form-group">
+      <%= f.select(:jewelrycollection_id, @jewelrycollections.collect {|c| [c.jewelcollection, c.id]}, {:include_blank => 'Select a jewelrycollection'}) %>
+  </div>
+  <div class="form-group">
+      <%= f.select(:jewelrymetal_id, @jewelrymetals.collect {|c| [c.metal, c.id]}, {:include_blank => 'Select a jewelry metal'}) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :upc %><br>
+    <%= f.number_field :upc, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :price %><br>
+    <%= f.text_field :price, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "form-control", rows: "4" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :location %><br>
+    <%= f.text_field :location, class: "form-control" %>
+  </div>
+ <div class="form-group">
+        <%= f.label "Upload a Photo" %>
+     <%= f.file_field :image %>
+      </div>
+  <div class="actions">
+      <%= f.submit class: "btn btn-success" %>
+  </div>
+<% end %>
+
+<% end %>

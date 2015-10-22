@@ -1,0 +1,14 @@
+<% if can? :update, @jewelrycollection %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Jewelcollection:</strong>
+  <%= @jewelrycollection.jewelcollection %>
+</p>
+
+<%= link_to 'Edit', edit_jewelrycollection_path(@jewelrycollection) %> |
+<%= link_to 'Back', jewelrycollections_path %>
+
+
+<% end %>

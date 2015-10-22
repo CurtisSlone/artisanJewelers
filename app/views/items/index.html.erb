@@ -1,0 +1,25 @@
+<% if can? :update, @item %>
+
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+    <% @items.each do |item| %>
+     <div class="col-md-4">
+    <div class="well item-well">
+        <center>
+            <% if item.image.exists? != nil %>
+            <%= image_tag item.image.url(:medium), class: "img-repsonsive" %>
+      <% end %>
+        <h2><%= item.upc %></h2>
+            <span><%= link_to 'Show', item %>|<%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </span></center>
+
+         
+         </div>
+    </div>
+         <% end %>
+</div>
+
+<%= link_to 'New Item', new_item_path %>
+
+<% end %>

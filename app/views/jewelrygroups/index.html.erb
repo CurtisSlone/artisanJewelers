@@ -1,0 +1,32 @@
+<% if can? :update, @jewelrygroup %>
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Jewelrygroups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Jewelrygroup</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jewelrygroups.each do |jewelrygroup| %>
+      <tr>
+        <td><%= jewelrygroup.jewelrygroup %></td>
+        <td><%= link_to 'Show', jewelrygroup %></td>
+        <td><%= link_to 'Edit', edit_jewelrygroup_path(jewelrygroup) %></td>
+        <td><%= link_to 'Destroy', jewelrygroup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jewelrygroup', new_jewelrygroup_path %>
+
+<% end %>

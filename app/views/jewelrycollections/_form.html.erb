@@ -1,0 +1,25 @@
+<% if can? :update, @jewelrycollection %>
+
+<%= form_for(@jewelrycollection) do |f| %>
+  <% if @jewelrycollection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@jewelrycollection.errors.count, "error") %> prohibited this jewelrycollection from being saved:</h2>
+
+      <ul>
+      <% @jewelrycollection.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :jewelcollection %><br>
+    <%= f.text_field :jewelcollection %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<% end %>

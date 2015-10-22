@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Artisanjewelers</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!--
+<nav class="">
+
+        <%= image_tag "logo.png", class: "img-responsive logo" %>
+  
+      <ul class="nav navbar-nav navbar-left">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Catalog", catalog_path %></li>
+      
+        <ul class="nav navbar-nav" >
+            <% Jewelrygroup.all.each do |jewelrygroup| %>
+            <li><%= link_to jewelrygroup.jewelrygroup, categorical_path(jewelrygroup_id: jewelrygroup.id) %></li>
+            <% end %>
+          </ul>
+          
+      <li>
+              <%= link_to "View Bag", view_order_path %>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+    
+         
+          <% if user_signed_in? %>
+  <% if current_user.admin? %>
+          <li> <%= link_to "Admin Panel", admin_path %></li>
+          <% end %>
+          <li>
+            <%= link_to "Edit Profile", edit_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to "Sign Up", new_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to "Log In", new_user_session_path %>
+          </li>
+        <% end %>
+      </ul>
+ 
+</nav>
+ 
+-->
+    <%= yield %>
+  
+<!--
+<footer class="navbar navbar-inverse">
+  
+    </footer>
+-->
+</body>
+</html>

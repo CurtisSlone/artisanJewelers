@@ -1,0 +1,53 @@
+<% if can? :update, @item %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Jewelrygroup:</strong>
+    <%= @item.jewelrygroup %>
+</p>
+
+<p>
+  <strong>Jewelrycategory:</strong>
+    <%= @item.jewelrycategory %>
+</p>
+
+<p>
+  <strong>Jewelrycollection:</strong>
+    <%= @item.jewelrycollection %>
+</p>
+
+<p>
+  <strong>Jewelrymetal:</strong>
+    <%= @item.jewelrymetal %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>Upc:</strong>
+  <%= @item.upc %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @item.price %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @item.description %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @item.location %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
+
+<% end %>

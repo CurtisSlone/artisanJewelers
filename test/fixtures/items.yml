@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  jewelrygroup_id: 
+  jewelrycategory_id: 
+  jewelrycollection_id: 
+  jewelrymetal_id: 
+  name: MyString
+  upc: 1
+  price: 1.5
+  description: MyText
+  location: MyString
+
+two:
+  jewelrygroup_id: 
+  jewelrycategory_id: 
+  jewelrycollection_id: 
+  jewelrymetal_id: 
+  name: MyString
+  upc: 1
+  price: 1.5
+  description: MyText
+  location: MyString

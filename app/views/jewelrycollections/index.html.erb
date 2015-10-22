@@ -1,0 +1,32 @@
+<% if can? :update, @jewelrycollection %>
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Jewelrycollections</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Jewelcollection</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jewelrycollections.each do |jewelrycollection| %>
+      <tr>
+        <td><%= jewelrycollection.jewelcollection %></td>
+        <td><%= link_to 'Show', jewelrycollection %></td>
+        <td><%= link_to 'Edit', edit_jewelrycollection_path(jewelrycollection) %></td>
+        <td><%= link_to 'Destroy', jewelrycollection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jewelrycollection', new_jewelrycollection_path %>
+
+<% end %>

@@ -1,0 +1,26 @@
+<% if can? :update, @jewelrymetal %>
+
+
+<%= form_for(@jewelrymetal) do |f| %>
+  <% if @jewelrymetal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@jewelrymetal.errors.count, "error") %> prohibited this jewelrymetal from being saved:</h2>
+
+      <ul>
+      <% @jewelrymetal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :metal %><br>
+    <%= f.text_field :metal %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<% end %>

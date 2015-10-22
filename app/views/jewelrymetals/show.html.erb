@@ -1,0 +1,14 @@
+<% if can? :update, @jewelrymetal %>
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Metal:</strong>
+  <%= @jewelrymetal.metal %>
+</p>
+
+<%= link_to 'Edit', edit_jewelrymetal_path(@jewelrymetal) %> |
+<%= link_to 'Back', jewelrymetals_path %>
+
+<% end %>
